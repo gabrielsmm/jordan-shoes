@@ -1,0 +1,205 @@
+/* Registrando a fonte */
+@font-face {
+    font-family: Montserrat;
+    src: url('../assets/font/Montserrat-Medium.ttf');
+}
+
+/* CSS reset */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-family: Montserrat;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header */
+header {
+    text-align: center;
+}
+
+.frete {
+    height: 40px;
+    background-color: #181818;
+    color: #F9F9F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.frete p {
+    font-size: .8em;
+}
+
+.titulo {
+    height: 40px;
+    background-color: #F9F9F9;
+    color: #181818;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo h3 {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Main */
+.parallax {
+    height: 43vh;
+    color: #F9F9F9;
+}
+
+.parallax {
+    overflow: auto;
+    position: relative;
+}
+
+.parallax::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10;
+    z-index: -1;
+
+    display: block;
+    background: url("../assets/img/wallpaper.jpeg") no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 43vh;
+
+    -webkit-filter: brightness(50%);
+    -moz-filter: brightness(50%);
+    -o-filter: brightness(50%);
+    -ms-filter: brightness(50%);
+    filter: brightness(50%);
+}
+
+.parallax>div {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.parallax h1 {
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.parallax p {
+    width: 55%;
+    line-height: 1.5;
+}
+
+.conteudo {
+    width: 90%;
+    margin: 0 auto;
+    padding: 40px 0;
+    text-align: center;
+    background-color: #F9F9F9;
+}
+
+.conteudo h3 {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #181818;
+}
+
+.conteudo p {
+    color: #474747;
+    margin-bottom: 30px;
+}
+
+.container-anuncio {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.card-anuncio {
+    background-color: #EBE9EA;
+    margin: 10px;
+    height: 200px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.card-anuncio p {
+    opacity: 0;
+    margin-bottom: 30px;
+    transition: 1s all ease;
+}
+
+.card-anuncio:hover p {
+    opacity: 1;
+    transition: 1s all ease;
+}
+
+.card-anuncio img {
+    transition: 1s all ease;
+}
+
+.card-anuncio:hover img {
+    transform: scale(1.1);
+    transition: 1s all ease;
+}
+
+/* Footer */
+footer {
+    height: 50px;
+    background-color: #181818;
+    color: #F9F9F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Media queries */
+@media (max-width: 801px) {
+    .parallax h1 {
+        font-size: 1.8em;
+    }
+    .parallax p {
+        width: 100%;
+    }
+    .parallax::before {
+        background-attachment: unset;
+    }
+}
+
+@media (max-width: 404px) {
+    .parallax h1 {
+        font-size: 1.6em;
+    }
+}
